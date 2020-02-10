@@ -176,7 +176,22 @@ rafraichir();
 
 var nbrBonbon = 191;
 
+function eatCoins() {
+    let myElement = document.querySelector(".score");
+    if (gridTable[Pacman.rows - 1][Pacman.cols - 1] == 2) {
+        gridTable[Pacman.rows - 1][Pacman.cols - 1] = 1;
 
+        if ((gridTable[Pacman.rows - 1][Pacman.cols - 1] = 1)) {
+            pacmanCoins++;
+            myElement.innerHTML = `<br>Coins : ${pacmanCoins}`;
+            console.log(pacmanCoins);
+            if (pacmanCoins == 191) {
+                myElement.innerHTML = `YOU WON!`;
+                // setTimeout(location.reload(), 2000);
+            }
+        }
+    }
+}
 
 
 
