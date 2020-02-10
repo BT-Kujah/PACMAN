@@ -1,3 +1,8 @@
+/* 191 bonbons */
+
+
+
+
 
 let grille=[
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],/* 1 */
@@ -66,9 +71,9 @@ for(let ligne in grille){
 
 
 
- 
+ var score = 0;
 
-
+var affichage = document.querySelector('h2')
 
 
 function bougePacman()
@@ -84,17 +89,17 @@ function bougePacman()
     document.querySelector('body').addEventListener('keydown', function() {
 
         var touche = window.event ? event.keyCode : event.which;
-        if (touche == 38) {
+        if (touche == 90) {
             pacman.direction = 1;
         }
-        if (touche == 40) {
+        if (touche == 83) {
             pacman.direction = 2;
         }
-        if (touche == 39) {
+        if (touche == 68) {
             pacman.direction = 3;
 
         }
-        if (touche == 37) {
+        if (touche == 81) {
             pacman.direction = 4;
         }
     });
@@ -132,8 +137,11 @@ function bougePacman()
 
     }
 
-    if (grille[pacman.y - 1][pacman.x - 1] == 1) {
-        grille[pacman.y - 1][pacman.x - 1] = 2
+    if (grille[pacman.y - 1][pacman.x - 1] == 2) {
+        grille[pacman.y - 1][pacman.x - 1] = 1
+        score++
+        affichage.textContent = 'Votre score : ' + score
+
 
     }
 }
@@ -159,11 +167,18 @@ function rafraichir()
     initGrille();
     bougePacman();
 
-    setTimeout(rafraichir,500)
+    setTimeout(rafraichir,200)
     
 }
 
 rafraichir(); 
+
+
+var nbrBonbon = 191;
+
+
+
+
 
 
 
