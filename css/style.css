@@ -5,29 +5,29 @@ body
     align-items: center;
 }
 
-.grille
+#grille
 {
     display: grid;
 }
 
 .sol
 {
-    background-image: url("./image/sol.gif");
+    background-image: url("../image/sol.gif");
 }
 
 .pacman
 {
-    background-image: url("./image/pacman.gif");
+    background-image: url("../image/pacman4.gif");
 }
 
 .mur
 {
-    background-image: url("./image/mur.gif");
+    background-image: url("../image/mur.gif");
 }
 
 .bonbon
 {
-    background-image: url("./image/bonbon.gif");
+    background-image: url("../image/bonbon.gif");
 }
 
 
