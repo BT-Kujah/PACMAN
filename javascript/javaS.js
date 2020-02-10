@@ -80,12 +80,64 @@ function bougePacman()
     div.style.gridColumn = pacman.x;
    div.classList.add("pacman");
     laGrille.appendChild(div)
-    pacman.direction = 1;
-     if (pacman.direction == 1) {
+    
+    document.querySelector('body').addEventListener('keydown', function() {
+
+        var touche = window.event ? event.keyCode : event.which;
+        if (touche == 38) {
+            pacman.direction = 1;
+        }
+        if (touche == 40) {
+            pacman.direction = 2;
+        }
+        if (touche == 39) {
+            pacman.direction = 3;
+
+        }
+        if (touche == 37) {
+            pacman.direction = 4;
+        }
+    });
+    if (pacman.direction == 1) {
         pacman.y--;
-        pacman.direction = 0;}
+
+    }
+    if (pacman.direction == 2) {
+        pacman.y++;
+
+    }
+    if (pacman.direction == 3) {
+        pacman.x++;
+
+    }
+    if (pacman.direction == 4) {
+        pacman.x--;
+
+    }
+
+    if (grille[pacman.y - 1][pacman.x - 1] == 0 && pacman.direction == 3) {
+        pacman.x--
+
+    }
+    if (grille[pacman.y - 1][pacman.x - 1] == 0 && pacman.direction == 4) {
+        pacman.x++
+
+    }
+    if (grille[pacman.y - 1][pacman.x - 1] == 0 && pacman.direction == 1) {
+        pacman.y++
+
+    }
+    if (grille[pacman.y - 1][pacman.x - 1] == 0 && pacman.direction == 2) {
+        pacman.y--
+
+    }
+
+    if (grille[pacman.y - 1][pacman.x - 1] == 1) {
+        grille[pacman.y - 1][pacman.x - 1] = 2
+
+    }
 }
-console.log;
+
 
 if (pacman.direction =0) {
     pacman.cols ++;//droite
@@ -107,7 +159,7 @@ function rafraichir()
     initGrille();
     bougePacman();
 
-    setTimeout(rafraichir,1000)
+    setTimeout(rafraichir,500)
     
 }
 
