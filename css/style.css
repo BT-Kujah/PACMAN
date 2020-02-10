@@ -18,6 +18,7 @@ body
 .pacman
 {
     background-image: url("../image/pacman4.gif");
+    z-index: 1;
 }
 
 .mur
