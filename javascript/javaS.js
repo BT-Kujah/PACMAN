@@ -29,8 +29,9 @@ let grille=[
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],/* 22 */
 ];
 
-var pacmanBonbon = 0;
 
+
+/* Personnages */
 var pacman =
 {
     x:5,
@@ -40,32 +41,29 @@ var pacman =
 
 
 var fantomeBleu = {
-    rows: 21,
-    cols: 2,
-    direction: "0",
-    class: "fantome_Bleu"
+    x: 10,
+    y: 11,
 };
 
-var fantomeRouge = {
-    rows: 11,
-    cols: 7,
-    direction: "0",
-    class: "fantome_Rouge"
+/* var fantomeRouge = {
+    x: 11,
+    y: 7,
+    
 };
 
 var fantomeJaune = {
-    rows: 13,
-    cols: 9,
-    direction: "0",
-    class: "fantome_Jaune"
+    x: 13,
+    y: 9,
+   
 };
-//Green Phantom
+
 var fantomeVert = {
-    rows: 2,
-    cols: 17,
-    direction: "0",
-    class: "fantome_Vert"
-};
+    x: 2,
+    y: 17,
+   
+}; */
+
+
 var laGrille =document.querySelector("#grille");
 
 function initGrille(){
@@ -174,14 +172,44 @@ function bougePacman()
         affichage.textContent = 'Votre score : ' + score
 
     }
-                if (score == 10) {
+                 if (score == 191) {
                alert("You Win")
             }
-
+ 
 }
 
+function bougeFantome () 
+{
+    var div = document.createElement("div")
+    div.style.gridRow = fantomeBleu.y;
+    div.style.gridColumn = fantomeBleu.x;
+   div.classList.add("fantomeBleu");
+    laGrille.appendChild(div)
 
-if (pacman.direction =0) {
+    function getRandomIntInclusive(min,max)
+{  min=Math.ceil(min);
+  max=Math.floor(max);
+  return Math.floor(Math.random()*(max-min+1))+min;
+} 
+if (fantomeBleu.direction == 1) {
+        fantomeBleu.y--;
+
+    }
+    if (fantomeBleu.direction == 2) {
+        fantomeBleu.y++;
+
+    }
+    if (fantomeBleu.direction == 3) {
+        fantomeBleu.x++;
+
+    }
+    if (fantomeBleu.direction == 4) {
+        fantomeBleu.x--;
+
+    }
+}
+
+/* if (pacman.direction =0) {
     pacman.cols ++;//droite
 } else if (pacman.direction =1) {
     pacman.rows++;//bas
@@ -190,9 +218,7 @@ if (pacman.direction =0) {
 }else if (pacman.direction = 3) {
     pacman.rows--;//haut
 } 
-
-
-
+ */
 
 
 
@@ -200,6 +226,7 @@ function rafraichir()
 {
     initGrille();
     bougePacman();
+    bougeFantome();
 
     setTimeout(rafraichir,200)
     
@@ -208,7 +235,11 @@ function rafraichir()
 rafraichir(); 
 
 
-
+/* function getRandomIntInclusive(min,max)
+{  min=Math.ceil(min);
+  max=Math.floor(max);
+  return Math.floor(Math.random()*(max-min+1))+min;
+} */
 
 
 
