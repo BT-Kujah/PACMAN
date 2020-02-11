@@ -29,12 +29,43 @@ let grille=[
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],/* 22 */
 ];
 
+var pacmanBonbon = 0;
+
 var pacman =
 {
     x:5,
     y:2,
     direction:0
 }
+
+
+var fantomeBleu = {
+    rows: 21,
+    cols: 2,
+    direction: "0",
+    class: "fantome_Bleu"
+};
+
+var fantomeRouge = {
+    rows: 11,
+    cols: 7,
+    direction: "0",
+    class: "fantome_Rouge"
+};
+
+var fantomeJaune = {
+    rows: 13,
+    cols: 9,
+    direction: "0",
+    class: "fantome_Jaune"
+};
+//Green Phantom
+var fantomeVert = {
+    rows: 2,
+    cols: 17,
+    direction: "0",
+    class: "fantome_Vert"
+};
 var laGrille =document.querySelector("#grille");
 
 function initGrille(){
@@ -142,8 +173,11 @@ function bougePacman()
         score++
         affichage.textContent = 'Votre score : ' + score
 
-
     }
+                if (score == 10) {
+               alert("You Win")
+            }
+
 }
 
 
@@ -174,11 +208,10 @@ function rafraichir()
 rafraichir(); 
 
 
-var nbrBonbon = 191;
 
 
 
 
 
 
-
+ 
