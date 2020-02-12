@@ -32,12 +32,18 @@ let grille=[
 
 
 /* Personnages */
-var pacman =
+  var pacman =
 {
     x:5,
     y:2,
     direction:0
-}
+}  
+
+
+
+var pacman = new Pacman()
+
+
 
 
 var fantomeBleu = {
@@ -45,24 +51,24 @@ var fantomeBleu = {
     y: 11,
 };
 
-/* var fantomeRouge = {
+/*  var fantomeRouge = {
     x: 11,
     y: 7,
-    
+    class = fantome_rouge
 };
 
 var fantomeJaune = {
     x: 13,
     y: 9,
-   
+   class = fantome_jaune
 };
 
 var fantomeVert = {
     x: 2,
     y: 17,
-   
-}; */
-
+   class = fantome_vert
+}; 
+ */
 
 var laGrille =document.querySelector("#grille");
 
@@ -217,7 +223,7 @@ if (fantomeBleu.direction == 1) {
 function rafraichir()
 {
     initGrille();
-    bougePacman();
+    pacman.bougePacman();
     bougeFantome();
 
     setTimeout(rafraichir,500)
@@ -225,12 +231,3 @@ function rafraichir()
 }
 
 rafraichir(); 
-
-
-
-
-
-
-
-
- 

@@ -35,15 +35,15 @@ body
     background-image: url("../image/fantome0.gif");
     background-color: black;
 }
-.fantomeRouge {
+.fantome_Rouge {
     background-image: url("../image/fantome2.gif");
     background-color: black;
 }
-.fantomeJaune {
+.fantome_Jaune {
     background-image: url("../image/fantome1.gif");
     background-color: black;
 }
-.fantomeVert {
+.fantome_Vert {
     background-image: url("../image/fantome3.gif");
     background-color: black;
 }
